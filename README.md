@@ -59,7 +59,26 @@ homepage/
 
 误删恢复：停止服务，把 `data/backups/` 里合适的那份复制为 `data/db.json`，再启动。
 
-## 部署到服务器
+## 部署到 Render
+
+仓库里已有 `render.yaml`，按 Blueprint 方式一键创建：
+
+1. 登录 <https://dashboard.render.com>，用 GitHub 账号授权 Render 访问本仓库
+2. 点 **New → Blueprint**，选择 `huaguoshan-homepage` 仓库
+3. 按提示填写 `ADMIN_PASSWORD`（后台初始密码，至少 8 位），确认创建
+4. 等部署完成，打开 `https://<服务名>.onrender.com`，后台是 `/admin`
+
+之后每次 `git push` 到 `main`，Render 会自动重新部署。
+
+**关于数据保存**：Render 服务器自带的硬盘是临时的，重新部署、重启或休眠后会还原。`render.yaml` 给服务挂了一块 1GB 持久化硬盘（`/var/data`），成果数据、上传文件和后台密码都存在上面，不会丢。
+
+- 持久化硬盘需要付费实例（starter 起）。想用免费实例：删掉 `render.yaml` 里的 `disk` 段，把 `plan` 改成 `free`。这时线上后台的修改会在重启或休眠后丢失，只能在本地改好再 `git push`
+- 硬盘第一次启动时会从仓库的 `data/db.json` 复制初始数据。上线后以线上后台为准，仓库里的 `db.json` 不会再覆盖线上数据
+- 仓库自带的 `uploads/seed/` 素材直接从代码目录读取，不占硬盘空间
+- 免费实例闲置 15 分钟会休眠，下次访问要等几十秒唤醒
+- 国内访问 `onrender.com` 域名可能不稳定，建议在 Render 的 Settings → Custom Domains 里绑定自己的域名
+
+## 部署到自己的服务器
 
 需要一台能跑 Node 的服务器（云主机、轻量服务器都行）。**不能**部署到 GitHub Pages 这类纯静态托管，因为上传和编辑需要服务端。
 
@@ -99,8 +118,10 @@ homepage/
 | `PORT` | `8080` | 监听端口 |
 | `HOST` | `0.0.0.0` | 监听地址，只想本机访问可设为 `127.0.0.1` |
 | `MAX_UPLOAD_MB` | `500` | 单个上传文件的大小上限 |
-| `TRUST_PROXY` | 不设置 | 在 Nginx 等反向代理后面时设为 `1` |
-| `ADMIN_PASSWORD` | 不设置 | 仅在首次启动、还没有 `data/config.json` 时生效 |
+| `TRUST_PROXY` | 不设置 | 在 Nginx、Render 等反向代理后面时设为 `1` |
+| `ADMIN_PASSWORD` | 不设置 | 仅在首次启动、还没有 `config.json` 时生效 |
+| `DATA_DIR` | `./data` | 数据目录（`db.json`、`config.json`、备份），指向持久化硬盘 |
+| `UPLOAD_DIR` | `./uploads` | 上传文件目录，指向持久化硬盘 |
 
 ## 安全说明
 

@@ -20,8 +20,12 @@ const { pipeline } = require('node:stream/promises');
 
 const ROOT = __dirname;
 const PUBLIC_DIR = path.join(ROOT, 'public');
-const UPLOAD_DIR = path.join(ROOT, 'uploads');
-const DATA_DIR = path.join(ROOT, 'data');
+// 仓库自带的初始数据与素材（只读来源）
+const SEED_DB_FILE = path.join(ROOT, 'data', 'db.json');
+const SEED_UPLOAD_DIR = path.join(ROOT, 'uploads');
+// 运行时数据目录。部署到 Render 等平台时指向持久化硬盘，否则重启后数据会丢
+const DATA_DIR = path.resolve(process.env.DATA_DIR || path.join(ROOT, 'data'));
+const UPLOAD_DIR = path.resolve(process.env.UPLOAD_DIR || SEED_UPLOAD_DIR);
 const BACKUP_DIR = path.join(DATA_DIR, 'backups');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
 const CONFIG_FILE = path.join(DATA_DIR, 'config.json');
@@ -161,6 +165,11 @@ let db = null;
 let writeChain = Promise.resolve();
 
 function loadDb() {
+  if (!fs.existsSync(DB_FILE) && DB_FILE !== SEED_DB_FILE && fs.existsSync(SEED_DB_FILE)) {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+    fs.copyFileSync(SEED_DB_FILE, DB_FILE);
+    console.log(`已从仓库初始数据创建 ${DB_FILE}`);
+  }
   try {
     db = JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
   } catch (e) {
@@ -560,7 +569,10 @@ async function handle(req, res) {
   if (req.method !== 'GET' && req.method !== 'HEAD') return fail(res, 405, '不支持的请求方式');
 
   if (pathname.startsWith('/uploads/')) {
-    const file = resolveInside(UPLOAD_DIR, pathname.slice('/uploads/'.length));
+    const rel = pathname.slice('/uploads/'.length);
+    let file = resolveInside(UPLOAD_DIR, rel);
+    // 上传目录在持久化硬盘上时，仓库自带的初始素材仍从代码目录读取，不必复制
+    if (file && UPLOAD_DIR !== SEED_UPLOAD_DIR && !fs.existsSync(file)) file = resolveInside(SEED_UPLOAD_DIR, rel);
     return file ? serveFile(req, res, file, { isUpload: true }) : fail(res, 404, '找不到这个文件');
   }
 
@@ -610,6 +622,7 @@ function main() {
     })
     .listen(PORT, HOST, () => {
       console.log(`花果山主页已启动：http://localhost:${PORT}    后台：http://localhost:${PORT}/admin`);
+      console.log(`数据目录：${DATA_DIR}    上传目录：${UPLOAD_DIR}`);
     });
 }
 

@@ -1,0 +1,33 @@
+# Render 部署配置（Blueprint）
+# 在 Render 控制台选择 New → Blueprint，连接本仓库即可按此配置创建服务。
+#
+# 数据（成果、上传文件、后台密码）保存在持久化硬盘 /var/data 上，重新部署和重启都不会丢。
+# 持久化硬盘需要付费实例（starter 起）。若改用 free：删掉 disk 段并把 plan 改为 free，
+# 这时线上后台的修改会在重启或休眠后丢失，只适合纯展示。
+
+services:
+  - type: web
+    name: huaguoshan-homepage
+    runtime: node
+    plan: starter
+    region: singapore
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /api/session
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: TRUST_PROXY
+        value: "1"
+      - key: DATA_DIR
+        value: /var/data
+      - key: UPLOAD_DIR
+        value: /var/data/uploads
+      # 后台初始密码：创建时在控制台填写，不写进仓库
+      - key: ADMIN_PASSWORD
+        sync: false
+    disk:
+      name: homepage-data
+      mountPath: /var/data
+      sizeGB: 1
