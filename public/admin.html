@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>后台管理 · 花果山</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.cn">
+  <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.cn/css2?family=Unbounded:wght@500;800&family=ZCOOL+QingKe+HuangYou&display=swap">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <!-- 登录 -->
+  <div class="login" id="login" hidden>
+    <form class="login-card" id="login-form">
+      <h1><span class="brand-mark">花果山</span>后台管理</h1>
+      <label class="field">
+        <span>管理密码</span>
+        <input type="password" name="password" autocomplete="current-password" required>
+      </label>
+      <p class="form-error" id="login-error" role="alert"></p>
+      <button class="btn primary" type="submit">登录</button>
+      <a class="back" href="/">返回主页</a>
+    </form>
+  </div>
+
+  <!-- 主界面 -->
+  <div class="app" id="app" hidden>
+    <header class="a-top">
+      <a class="brand-mark" href="/" target="_blank" rel="noopener">花果山</a>
+      <nav class="tabs" role="tablist" aria-label="后台功能">
+        <button role="tab" id="t-works" aria-controls="tab-works" aria-selected="true" data-tab="works">成果</button>
+        <button role="tab" id="t-profile" aria-controls="tab-profile" aria-selected="false" data-tab="profile">个人资料</button>
+        <button role="tab" id="t-settings" aria-controls="tab-settings" aria-selected="false" data-tab="settings">设置</button>
+      </nav>
+      <div class="a-actions">
+        <a class="btn ghost" href="/" target="_blank" rel="noopener">查看主页</a>
+        <button class="btn ghost" id="logout" type="button">退出登录</button>
+      </div>
+    </header>
+
+    <main class="a-main">
+      <!-- 成果 -->
+      <section id="tab-works" role="tabpanel" aria-labelledby="t-works">
+        <div class="toolbar">
+          <div class="toolbar-left">
+            <h1 class="a-title">成果 <b id="count"></b></h1>
+            <input type="search" id="search" placeholder="搜索标题、单位、标签" aria-label="搜索成果">
+            <select id="cat-filter" aria-label="按类别筛选"></select>
+          </div>
+          <button class="btn primary" id="new-btn" type="button">
+            <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            新增成果
+          </button>
+        </div>
+        <ul class="rows" id="rows"></ul>
+      </section>
+
+      <!-- 个人资料 -->
+      <section id="tab-profile" role="tabpanel" aria-labelledby="t-profile" hidden>
+        <form id="profile-form" class="panel-form">
+          <h1 class="a-title">个人资料</h1>
+          <div class="grid-2">
+            <label class="field"><span>名字</span><input name="name" maxlength="30" required></label>
+            <label class="field"><span>所在城市</span><input name="location" maxlength="40"></label>
+          </div>
+          <label class="field">
+            <span>身份标签</span>
+            <input name="roles" placeholder="用逗号分隔，如：AI 信奉者，AI 践行者">
+            <small>显示在首屏底部，会随文字变换依次点亮。</small>
+          </label>
+          <label class="field">
+            <span>首屏变换的词</span>
+            <input name="heroWords" placeholder="用逗号分隔，如：花果山，七十二变，AI">
+            <small>首屏粒子会依次组成这些词。每个词建议 2–4 个字，最多 8 个字。</small>
+          </label>
+          <label class="field">
+            <span>自我介绍</span>
+            <textarea name="intro" rows="5" maxlength="2000"></textarea>
+            <small>每一行显示为一段。</small>
+          </label>
+
+          <fieldset class="group">
+            <legend>社交链接</legend>
+            <div class="link-rows" id="profile-links"></div>
+            <button type="button" class="btn ghost small" data-add-link="profile-links">添加链接</button>
+          </fieldset>
+
+          <fieldset class="group">
+            <legend>年度总结</legend>
+            <div class="grid-2">
+              <label class="field"><span>标题</span><input name="yrTitle" maxlength="60" placeholder="如：2025 年 AI 总结"></label>
+              <label class="field"><span>引言</span><input name="yrIntro" maxlength="600"></label>
+            </div>
+            <ol class="yr-items" id="yr-items"></ol>
+            <button type="button" class="btn ghost small" id="yr-add">添加一条</button>
+            <small class="hint">没有条目时，主页不显示这一版块。最后一条会被放大显示。</small>
+          </fieldset>
+
+          <label class="field">
+            <span>页脚一句话</span>
+            <input name="footer" maxlength="200">
+          </label>
+
+          <div class="form-foot">
+            <p class="form-error" id="profile-error" role="alert"></p>
+            <button class="btn primary" type="submit">保存个人资料</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- 设置 -->
+      <section id="tab-settings" role="tabpanel" aria-labelledby="t-settings" hidden>
+        <h1 class="a-title">设置</h1>
+        <form id="pwd-form" class="panel-form card">
+          <h2>修改密码</h2>
+          <label class="field"><span>当前密码</span><input type="password" name="oldPassword" autocomplete="current-password" required></label>
+          <label class="field"><span>新密码</span><input type="password" name="newPassword" autocomplete="new-password" minlength="8" required><small>至少 8 位。修改后其他设备上的登录会失效。</small></label>
+          <label class="field"><span>再输一次新密码</span><input type="password" name="confirm" autocomplete="new-password" minlength="8" required></label>
+          <div class="form-foot">
+            <p class="form-error" id="pwd-error" role="alert"></p>
+            <button class="btn primary" type="submit">修改密码</button>
+          </div>
+        </form>
+
+        <div class="panel-form card">
+          <h2>清理未使用的文件</h2>
+          <p class="muted">删除成果或移除图片后，原文件仍留在服务器上。这里可以找出没有被任何成果或个人资料引用的文件并删除。</p>
+          <div class="form-foot left">
+            <button class="btn ghost" type="button" id="scan-btn">扫描</button>
+            <button class="btn danger" type="button" id="clean-btn" hidden></button>
+          </div>
+          <ul class="file-list" id="file-list"></ul>
+        </div>
+
+        <div class="panel-form card">
+          <h2>数据备份</h2>
+          <p class="muted">每次保存都会把上一版数据自动备份到服务器的 <code>data/backups/</code> 目录，保留最近 30 份。误删后可以从那里恢复 <code>data/db.json</code>。</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- 编辑器 -->
+  <dialog class="editor" id="editor" aria-labelledby="ed-title">
+    <form id="ed-form" novalidate>
+      <header class="ed-head">
+        <h2 id="ed-title">新增成果</h2>
+        <button type="button" class="icon-btn" data-ed-close aria-label="关闭">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </header>
+
+      <div class="ed-body">
+        <label class="field">
+          <span>标题 <em>必填</em></span>
+          <input name="title" maxlength="120" required placeholder="作品名或赛事名，如：行走的地方志">
+        </label>
+        <div class="grid-3">
+          <label class="field">
+            <span>日期 <em>必填</em></span>
+            <input name="date" required placeholder="2026-11-05" inputmode="numeric" pattern="\d{4}(-\d{2}(-\d{2})?)?">
+            <small>可只填到月（2026-11）或年（2026）</small>
+          </label>
+          <label class="field">
+            <span>类别</span>
+            <input name="category" list="cat-list" maxlength="20" placeholder="选择或输入">
+            <datalist id="cat-list"></datalist>
+          </label>
+          <label class="field">
+            <span>奖项 / 成绩</span>
+            <input name="award" maxlength="60" placeholder="如：一等奖、城市前三">
+          </label>
+        </div>
+        <label class="field">
+          <span>主办 / 颁发单位</span>
+          <input name="org" maxlength="160">
+        </label>
+        <label class="field">
+          <span>一句话简介</span>
+          <textarea name="summary" rows="2" maxlength="300" placeholder="显示在代表作卡片和详情页顶部"></textarea>
+        </label>
+        <label class="field">
+          <span>详细介绍</span>
+          <textarea name="content" rows="9" maxlength="20000"></textarea>
+          <small>空一行分段；以「- 」开头的行显示为列表。</small>
+        </label>
+        <label class="field">
+          <span>标签</span>
+          <input name="tags" placeholder="用逗号分隔，如：AI 硬件，BLE，文旅">
+        </label>
+
+        <fieldset class="group">
+          <legend>图片、视频和附件</legend>
+          <label class="drop" id="drop">
+            <input type="file" id="file-input" multiple accept="image/*,video/*,.pdf,.html,.pptx,.docx,.xlsx,.zip,.mp3,.wav,.m4a">
+            <strong>拖入文件，或点击选择</strong>
+            <span>图片会自动压缩到 2000 像素以内；视频建议 MP4（H.264）；PDF、PPT、HTML 等作为附件加到「相关链接」。</span>
+          </label>
+          <ul class="queue" id="queue"></ul>
+
+          <h3 class="sub">图片 <b id="img-count"></b></h3>
+          <p class="hint" id="img-empty">还没有图片。带星标的那张是封面。</p>
+          <ul class="img-grid" id="img-grid"></ul>
+
+          <h3 class="sub">视频 <b id="vid-count"></b></h3>
+          <ul class="vid-list" id="vid-list"></ul>
+        </fieldset>
+
+        <fieldset class="group">
+          <legend>相关链接</legend>
+          <div class="link-rows" id="ed-links"></div>
+          <button type="button" class="btn ghost small" data-add-link="ed-links">添加链接</button>
+        </fieldset>
+
+        <fieldset class="group switches">
+          <legend>展示设置</legend>
+          <label class="check"><input type="checkbox" name="featured"><span>放进首页「代表作」</span><small>最多显示最近的 6 条</small></label>
+          <label class="check"><input type="checkbox" name="visible" checked><span>在主页公开</span><small>取消后只在后台可见</small></label>
+        </fieldset>
+      </div>
+
+      <footer class="ed-foot">
+        <p class="form-error" id="ed-error" role="alert"></p>
+        <button type="button" class="btn ghost" data-ed-close>取消</button>
+        <button type="submit" class="btn primary" id="ed-save">保存</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- 确认框 -->
+  <dialog class="confirm" id="confirm" aria-labelledby="cf-title">
+    <h2 id="cf-title"></h2>
+    <p id="cf-text"></p>
+    <div class="cf-actions">
+      <button type="button" class="btn ghost" value="cancel" id="cf-cancel">取消</button>
+      <button type="button" class="btn danger" value="ok" id="cf-ok"></button>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="/js/admin.js"></script>
+</body>
+</html>

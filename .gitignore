@@ -1,0 +1,4 @@
+data/config.json
+data/backups/
+data/*.tmp
+node_modules/

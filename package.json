@@ -1,0 +1,14 @@
+{
+  "name": "huaguoshan-homepage",
+  "version": "1.0.0",
+  "private": true,
+  "description": "花果山个人主页：成果展示 + 后台管理（零依赖 Node 服务）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "set-password": "node server.js --set-password"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

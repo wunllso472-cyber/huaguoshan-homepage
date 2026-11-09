@@ -1,0 +1,685 @@
+{
+  "profile": {
+    "name": "花果山",
+    "roles": [
+      "AI 信奉者",
+      "AI 爱好者",
+      "AI 践行者",
+      "AI 倡导者"
+    ],
+    "heroWords": [
+      "花果山",
+      "七十二变",
+      "AI",
+      "黑客松",
+      "信创"
+    ],
+    "intro": "在杭州，白天做信创与政企 AI 项目，把大模型部署进国产化环境；业余时间泡在黑客松、AI 视频创作和 WaytoAGI 社区里。\n我相信 AI 不缺会说的，缺会做的。所以每次参赛，都尽量交出一个能直接用的东西。",
+    "location": "杭州",
+    "avatar": "",
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/david3832024-coder"
+      },
+      {
+        "label": "小红书",
+        "url": "https://www.xiaohongshu.com/user/profile/6543a07b0000000030031f89"
+      }
+    ],
+    "yearReview": {
+      "title": "2025 年 AI 总结",
+      "intro": "学 AI 这一年，收获比预想的多，一共七样。",
+      "items": [
+        {
+          "title": "赚到一些钱",
+          "text": "模型训练相关的数据标注和轨迹标注，各类比赛的参与奖和阳光普照奖购物卡，还有剪映模板分成。钱不多，但隔三岔五弹出一条「0.1 元到账」，被通知上百次有钱进账，还挺享受。"
+        },
+        {
+          "title": "拿到一些证书",
+          "text": "瓦卡奖优秀奖、腾讯繁星计划「数字守艺人」、通义千问内部体验先锋、AI 切磋大会冠军、SOHO 中国「AI 新生活」影像创想大赛一等奖、Trickle 证书、支付宝 MCP 黑客松三等奖……"
+        },
+        {
+          "title": "做成几个 AI 项目",
+          "text": "给政府客户做的本地化部署信创 AI 项目，从模型到应用都跑在国产化环境里。"
+        },
+        {
+          "title": "收获一些快乐",
+          "text": "做了一些微信表情包、搞笑图片和搞笑视频。"
+        },
+        {
+          "title": "工作提了效",
+          "text": "写文档、写方案更快了；工作里各类图片处理交给 AI；还写了 Excel VBA 小工具、浏览器插件，以及一些应付式的代码，比如软著。"
+        },
+        {
+          "title": "认识一群志同道合的朋友",
+          "text": "连接到最前沿的生态，最有想法、最有奉献精神的人。在 WaytoAGI 认识了黄叔、冰鱼仔、添锦、ben、彬子、猴哥等在各自领域拿到结果的人，从他们身上学到很多，也「揩了不少油」。"
+        },
+        {
+          "title": "找到自己的真 AI（爱）",
+          "text": "学 AI 是一种乐趣，获取新东西本身就是最大的精神收获；其次是和一帮朋友一起学习、一起协作；再次是被尊重，在别人眼里成了「AI 大神」；最后，顺便赚了一点钱。"
+        }
+      ]
+    },
+    "footer": "把「我想做」变成「我做的」。"
+  },
+  "achievements": [
+    {
+      "id": "difangzhi",
+      "title": "行走的地方志",
+      "date": "2026-11-05",
+      "category": "黑客松",
+      "award": "硬件赛道参赛作品",
+      "org": "一万个回答 · AI 文化造物黑客松",
+      "summary": "一枚会讲故事的城市文化徽章：走近景点，两块屏一起「咚」地盖章，AI 讲这里的地方志，再摆个文化姿势，拍一张有梗的照片。",
+      "content": "游客常常「到过」却没有「记住」：掏手机导览门槛高，打卡只有一枚印章，城市的故事散落在书页、展板和网页里，离开景点就忘。\n\n行走的地方志把景点变成会「喊名字」的蓝牙信标，戴着圆屏徽章走近就能听故事：\n- 走近信标约 3 秒自动盖章，存入勋章墙；墨水屏信标同步播放盖章动画，显示「您是第 N 位在这里打卡的游客」\n- AI 讲这里的典故，讲解预生成后存在 SD 卡上，断网也能秒开\n- 拍照姿势章：陀螺仪识别摇橹（西溪）、撑伞（断桥）、托塔（雷峰塔）等文化动作，做对就盖一枚金色姿势章\n- 圆屏上的 AI 伙伴「小圆」随对话变换表情，接入火山引擎端到端实时语音，打卡后可以继续追问\n- 附带拼豆小游戏，第一关就是西湖三潭印月\n\n硬件基于涂鸦 T5AI（1.75 英寸 AMOLED 圆屏、6 轴 IMU、麦克风与喇叭）。打卡、盖章、姿势识别和回执都在两块板之间通过 BLE 本地完成，只有讲解生成和实时对话需要联网，专为 Wi-Fi 拥挤的展会现场设计。\n\n11 月 5 日到 7 日，从 TuyaOpen 模板新建工程，一路做到信标打卡、墨水屏回执、姿势章和小圆表情。",
+      "tags": [
+        "AI 硬件",
+        "涂鸦 T5AI",
+        "BLE",
+        "文旅",
+        "实时语音"
+      ],
+      "cover": "/uploads/seed/difangzhi/xiaoyuan-smile.jpg",
+      "images": [
+        {
+          "url": "/uploads/seed/difangzhi/xiaoyuan-smile.jpg",
+          "caption": "小圆：打卡成功后的开心表情"
+        },
+        {
+          "url": "/uploads/seed/difangzhi/xiaoyuan-nap.jpg",
+          "caption": "小圆在打盹"
+        },
+        {
+          "url": "/uploads/seed/difangzhi/xiaoyuan-screen.jpg",
+          "caption": "圆屏徽章上的讲解界面"
+        },
+        {
+          "url": "/uploads/seed/difangzhi/beacon.jpg",
+          "caption": "墨水屏信标与徽章"
+        },
+        {
+          "url": "/uploads/seed/difangzhi/badge-board.jpg",
+          "caption": "T5AI 圆屏开发板 + 18650 电池"
+        },
+        {
+          "url": "/uploads/seed/difangzhi/t5ai-board.jpg",
+          "caption": "涂鸦 T5AI 圆屏板正反面"
+        },
+        {
+          "url": "/uploads/seed/difangzhi/venue.jpg",
+          "caption": "AI 文化造物黑客松现场"
+        },
+        {
+          "url": "/uploads/seed/difangzhi/booth.jpg",
+          "caption": ""
+        },
+        {
+          "url": "/uploads/seed/difangzhi/desk.jpg",
+          "caption": "调试中"
+        },
+        {
+          "url": "/uploads/seed/difangzhi/pitch-1.jpg",
+          "caption": ""
+        },
+        {
+          "url": "/uploads/seed/difangzhi/pitch-2.jpg",
+          "caption": ""
+        },
+        {
+          "url": "/uploads/seed/difangzhi/makers.jpg",
+          "caption": ""
+        },
+        {
+          "url": "/uploads/seed/difangzhi/tower.jpg",
+          "caption": ""
+        },
+        {
+          "url": "/uploads/seed/difangzhi/night.jpg",
+          "caption": "比赛夜里的场馆"
+        },
+        {
+          "url": "/uploads/seed/difangzhi/video-poster.jpg",
+          "caption": "产品介绍视频"
+        }
+      ],
+      "videos": [
+        {
+          "url": "/uploads/seed/difangzhi/intro.mp4",
+          "caption": "产品介绍",
+          "poster": "/uploads/seed/difangzhi/video-poster.jpg"
+        }
+      ],
+      "links": [],
+      "featured": true,
+      "visible": true,
+      "createdAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T08:20:15.596Z"
+    },
+    {
+      "id": "yigao-qifa",
+      "title": "一稿七发",
+      "date": "2026-10-25",
+      "category": "黑客松",
+      "award": "超能搭档 · 个人创作",
+      "org": "观猹大会 · 天禧专场黑客松",
+      "summary": "输入一篇草稿和几张现场照片，约 2.5 分钟输出小红书图组、公众号排版、60 秒口播分镜、微博和朋友圈文案，打包成一个能直接发的文件夹。",
+      "content": "写完草稿，活儿才刚开始：同一篇内容要按小红书、公众号、口播、微博分别改写，封面要另开工具做，排版还得另开编辑器。现有 AI 给你一段文字，剩下的你自己来，会说，不会做。\n\n一稿七发是一个标准 Skill，大模型负责创意，脚本负责效果：\n- 读草稿：txt、md、docx 都行，照片可选\n- 全平台改写：每个平台一份规则文件，管字数、钩子、标签和禁用词（豆包 Seed 2.1 Pro）\n- 规则校验：禁用词扫描、口播时长与台词对齐、JSON 结构检查\n- 出图与渲染：AI 封面配图、模板渲染知识卡片、照片自动裁成 3:4 加标题条（Seedream 5.0 Pro）\n- 打包交付：发布包文件夹 + 手机样式预览页，一键复制\n\n一次真实运行：300 多字的「观猹大会见闻」草稿进去，出来 5 个平台的文案、7 张 1080×1440 成品图，全流程约 2.5 分钟。\n\n为了稳：渲染三级降级（Playwright → 本机浏览器无头截图 → Pillow 直接绘制）；加一个平台只需新增一份 Markdown 规则，不改代码。",
+      "tags": [
+        "Skill",
+        "内容创作",
+        "豆包",
+        "Seedream",
+        "自动化"
+      ],
+      "cover": "/uploads/seed/yigao-qifa/roadshow-cover.jpg",
+      "images": [
+        {
+          "url": "/uploads/seed/yigao-qifa/roadshow-cover.jpg",
+          "caption": "路演首页"
+        },
+        {
+          "url": "/uploads/seed/yigao-qifa/xhs-cover.jpg",
+          "caption": "自动生成的小红书封面"
+        },
+        {
+          "url": "/uploads/seed/yigao-qifa/xhs-1.jpg",
+          "caption": "内页知识卡片 1"
+        },
+        {
+          "url": "/uploads/seed/yigao-qifa/xhs-2.jpg",
+          "caption": "内页知识卡片 2"
+        },
+        {
+          "url": "/uploads/seed/yigao-qifa/xhs-3.jpg",
+          "caption": "内页知识卡片 3"
+        },
+        {
+          "url": "/uploads/seed/yigao-qifa/preview.jpg",
+          "caption": "发布包手机预览页"
+        },
+        {
+          "url": "/uploads/seed/yigao-qifa/promo-poster.jpg",
+          "caption": "天禧专场宣传片"
+        }
+      ],
+      "videos": [
+        {
+          "url": "/uploads/seed/yigao-qifa/promo.mp4",
+          "caption": "天禧专场宣传片",
+          "poster": "/uploads/seed/yigao-qifa/promo-poster.jpg"
+        }
+      ],
+      "links": [
+        {
+          "label": "打开路演页",
+          "url": "/uploads/seed/yigao-qifa/roadshow.html"
+        }
+      ],
+      "featured": true,
+      "visible": true,
+      "createdAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T08:20:15.591Z"
+    },
+    {
+      "id": "coding-1024",
+      "title": "1024 超能 Coding 周末 · 杭州",
+      "date": "2026-10-24",
+      "category": "黑客松",
+      "award": "城市前三 · 第三名",
+      "org": "WaytoAGI 全国 AI 切磋大会组委会",
+      "summary": "作品《动动口，点个麦当劳》：动动嘴就能下单的语音点餐 AI 应用，在杭州城市评选中拿到第三名。",
+      "content": "程序员节周末，WaytoAGI 在全国多个城市同时开打「1024 超能 Coding 周末」。\n\n我带着《动动口，点个麦当劳》上台演示：不用在 App 里层层点选，开口说想吃什么，AI 帮你把单点好。最终在杭州城市评选中获得第三名。",
+      "tags": [
+        "WaytoAGI",
+        "语音交互",
+        "AI 应用"
+      ],
+      "cover": "/uploads/seed/coding-1024/p1.jpg",
+      "images": [
+        {
+          "url": "/uploads/seed/coding-1024/p1.jpg",
+          "caption": "上台演示《动动口，点个麦当劳》"
+        },
+        {
+          "url": "/uploads/seed/coding-1024/cert.jpg",
+          "caption": "城市前三获奖证书"
+        },
+        {
+          "url": "/uploads/seed/coding-1024/p2.jpg",
+          "caption": "杭州站合影"
+        },
+        {
+          "url": "/uploads/seed/coding-1024/p3.jpg",
+          "caption": ""
+        },
+        {
+          "url": "/uploads/seed/coding-1024/p4.jpg",
+          "caption": ""
+        },
+        {
+          "url": "/uploads/seed/coding-1024/p5.jpg",
+          "caption": ""
+        },
+        {
+          "url": "/uploads/seed/coding-1024/p6.jpg",
+          "caption": ""
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "featured": true,
+      "visible": true,
+      "createdAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z"
+    },
+    {
+      "id": "qiecuo-27",
+      "title": "AI 切磋大会第 27 期 · 爆款短剧开赛",
+      "date": "2026-08-30",
+      "category": "活动分享",
+      "award": "杭州站分享",
+      "org": "WaytoAGI × 城投资产 · 未来数智港",
+      "summary": "AI 短漫剧创作大赛全国 40 城同步开场，我在杭州站上台分享。",
+      "content": "AI 切磋大会第 27 期的主题是 AI 短漫剧：脑洞成剧，一秒入戏。\n\n赛道包括都市情感、都市脑洞、古风传说、末日科幻悬疑和开放赛道，报名投稿期 8 月 27 日至 10 月 10 日。",
+      "tags": [
+        "WaytoAGI",
+        "AI 短剧",
+        "分享"
+      ],
+      "cover": "/uploads/seed/qiecuo-27/p1.jpg",
+      "images": [
+        {
+          "url": "/uploads/seed/qiecuo-27/p1.jpg",
+          "caption": "杭州站现场分享"
+        },
+        {
+          "url": "/uploads/seed/qiecuo-27/p2.jpg",
+          "caption": "开场前的会场"
+        },
+        {
+          "url": "/uploads/seed/qiecuo-27/p3.jpg",
+          "caption": ""
+        },
+        {
+          "url": "/uploads/seed/qiecuo-27/p4.jpg",
+          "caption": ""
+        },
+        {
+          "url": "/uploads/seed/qiecuo-27/p5.jpg",
+          "caption": ""
+        },
+        {
+          "url": "/uploads/seed/qiecuo-27/p6.jpg",
+          "caption": ""
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z"
+    },
+    {
+      "id": "shangmi",
+      "title": "2024 年度杭州市商用密码应用优秀案例",
+      "date": "2025-12",
+      "category": "竞赛获奖",
+      "award": "三等奖",
+      "org": "杭州市商用密码应用协会",
+      "summary": "参评项目《小信助手终端智能管家》，面向信创终端的桌面智能管家。",
+      "content": "《小信助手终端智能管家》在「2024 年度杭州市商用密码应用优秀案例」征集中获三等奖，获奖单位为浙江省公众信息产业有限公司。",
+      "tags": [
+        "商用密码",
+        "信创终端"
+      ],
+      "cover": "/uploads/seed/shangmi/cert.jpg",
+      "images": [
+        {
+          "url": "/uploads/seed/shangmi/cert.jpg",
+          "caption": "荣誉证书"
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z"
+    },
+    {
+      "id": "qwen",
+      "title": "通义千问内部体验先锋",
+      "date": "2025-12",
+      "category": "荣誉认证",
+      "award": "体验先锋",
+      "org": "通义千问",
+      "summary": "参与通义千问内部体验，提前上手新能力并反馈使用问题。",
+      "content": "",
+      "tags": [
+        "通义千问",
+        "内测"
+      ],
+      "cover": "/uploads/seed/qwen/cap.jpg",
+      "images": [
+        {
+          "url": "/uploads/seed/qwen/cap.jpg",
+          "caption": "体验先锋周边"
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z"
+    },
+    {
+      "id": "zaodian",
+      "title": "「造点」大合唱创作大赛",
+      "date": "2025-11-11",
+      "category": "创作",
+      "award": "阳光普照奖",
+      "org": "锦上添花 AI",
+      "summary": "参加锦上添花 AI 主办的创作大赛，作品获「阳光普照奖」。",
+      "content": "",
+      "tags": [
+        "AIGC"
+      ],
+      "cover": "/uploads/seed/zaodian/cert.jpg",
+      "images": [
+        {
+          "url": "/uploads/seed/zaodian/cert.jpg",
+          "caption": "获奖证书"
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z"
+    },
+    {
+      "id": "alipay-mcp",
+      "title": "支付宝 MCP · 2 小时黑客松挑战赛",
+      "date": "2025-11",
+      "category": "黑客松",
+      "award": "三等奖",
+      "org": "支付宝 × 魔搭社区 ModelScope",
+      "summary": "两小时内基于支付宝 MCP 做出解决方案，拿到三等奖，外加一件 AI001 文化衫。",
+      "content": "证书原文：在支付宝 MCP · 2 小时黑客松挑战赛中凭借其卓越的表现和创新的解决方案，荣获三等奖。",
+      "tags": [
+        "MCP",
+        "支付宝",
+        "限时开发"
+      ],
+      "cover": "/uploads/seed/alipay-mcp/cert.jpg",
+      "images": [
+        {
+          "url": "/uploads/seed/alipay-mcp/cert.jpg",
+          "caption": "三等奖证书"
+        },
+        {
+          "url": "/uploads/seed/alipay-mcp/tee-front.jpg",
+          "caption": "AI001 文化衫"
+        },
+        {
+          "url": "/uploads/seed/alipay-mcp/tee-back.jpg",
+          "caption": ""
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z"
+    },
+    {
+      "id": "trickle",
+      "title": "One-Sentence AI Coding Challenge",
+      "date": "2025-10-25",
+      "category": "黑客松",
+      "award": "参赛证书",
+      "org": "Trickle × WaytoAGI",
+      "summary": "一句话生成应用的 AI 编程挑战，由 Trickle 与 WaytoAGI 联合举办。",
+      "content": "证书原文：participated in the \"One-Sentence AI Coding Challenge\" co-hosted by WaytoAGI and Trickle, and demonstrated outstanding AI creativity during the challenge.",
+      "tags": [
+        "AI 编程",
+        "WaytoAGI"
+      ],
+      "cover": "/uploads/seed/trickle/cert.jpg",
+      "images": [
+        {
+          "url": "/uploads/seed/trickle/cert.jpg",
+          "caption": "参赛证书"
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z"
+    },
+    {
+      "id": "vacat",
+      "title": "2025 AI 视觉创意大赛（瓦卡奖 VACAT）",
+      "date": "2025-10-17",
+      "category": "创作",
+      "award": "优秀奖",
+      "org": "AI 视觉创意大赛组委会",
+      "summary": "参与创作的 AI 商业创意影片《乐事 × 简笔画小人》获优秀奖。",
+      "content": "奖项类目：AI 商业创意影片。颁奖地点在深圳市龙岗区红立方。",
+      "tags": [
+        "AI 视频",
+        "商业创意"
+      ],
+      "cover": "/uploads/seed/vacat/trophy.jpg",
+      "images": [
+        {
+          "url": "/uploads/seed/vacat/trophy.jpg",
+          "caption": "瓦卡奖优秀奖奖牌"
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z"
+    },
+    {
+      "id": "shouyiren",
+      "title": "腾讯繁星计划 AIGC 创作者小赛",
+      "date": "2025-06-20",
+      "category": "创作",
+      "award": "「数字守艺人」称号",
+      "org": "腾讯 SSV 数字文化",
+      "summary": "5·18 国际博物馆日期间参加 AIGC 创作者小赛，作品表现优异，获评「数字守艺人」。",
+      "content": "",
+      "tags": [
+        "AIGC",
+        "数字文化",
+        "博物馆"
+      ],
+      "cover": "/uploads/seed/shouyiren/cert.jpg",
+      "images": [
+        {
+          "url": "/uploads/seed/shouyiren/cert.jpg",
+          "caption": "数字守艺人证书"
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z"
+    },
+    {
+      "id": "miit-case",
+      "title": "2024 年信息技术应用创新典型应用案例",
+      "date": "2025-06",
+      "category": "荣誉认证",
+      "award": "入围",
+      "org": "工业和信息化部网络安全产业发展中心（工业和信息化部信息中心）",
+      "summary": "「基于大数据的智能化信创产业服务平台」入围工信部 2024 年信创典型应用案例。",
+      "content": "申报单位为中共杭州市委办公厅信息化管理中心与浙江省公众信息产业有限公司，平台即后来获得数字中国创新大赛信创赛道一等奖的数字信创产业服务平台。",
+      "tags": [
+        "信创",
+        "典型案例"
+      ],
+      "cover": "/uploads/seed/miit-case/cert.jpg",
+      "images": [
+        {
+          "url": "/uploads/seed/miit-case/cert.jpg",
+          "caption": "入围证书"
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z"
+    },
+    {
+      "id": "qiecuo-champion",
+      "title": "WaytoAGI AI 切磋大会 · 杭州站",
+      "date": "2025-05",
+      "category": "黑客松",
+      "award": "冠军 · AI 实战先锋",
+      "org": "WaytoAGI「通往AGI之路」社区",
+      "summary": "和小峰组成「手搓小队」，带着项目《杭州景鉴》在实战展示环节胜出，拿下冠军。",
+      "content": "证书原文：凭借创新思维与卓越技术实力，在实战展示环节中脱颖而出，荣获「冠军」殊荣。",
+      "tags": [
+        "WaytoAGI",
+        "AI 应用"
+      ],
+      "cover": "/uploads/seed/qiecuo-champion/cert.jpg",
+      "images": [
+        {
+          "url": "/uploads/seed/qiecuo-champion/cert.jpg",
+          "caption": "冠军证书"
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z"
+    },
+    {
+      "id": "kunpeng",
+      "title": "鲲鹏创新大赛 2025 浙江区域赛 · 企业赛道",
+      "date": "2025",
+      "category": "竞赛获奖",
+      "award": "铜奖",
+      "org": "华为鲲鹏创新大赛",
+      "summary": "以「数字信创平台」参赛，获企业赛道铜奖。",
+      "content": "",
+      "tags": [
+        "鲲鹏",
+        "信创"
+      ],
+      "cover": "/uploads/seed/kunpeng/cert.jpg",
+      "images": [
+        {
+          "url": "/uploads/seed/kunpeng/cert.jpg",
+          "caption": "荣誉证书"
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z"
+    },
+    {
+      "id": "soho",
+      "title": "SOHO 中国「AI 新生活」影像创想大赛",
+      "date": "2025",
+      "category": "创作",
+      "award": "一等奖",
+      "org": "SOHO 中国",
+      "summary": "AI 影像创作作品获一等奖。",
+      "content": "",
+      "tags": [
+        "AI 影像"
+      ],
+      "cover": "",
+      "images": [],
+      "videos": [],
+      "links": [],
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z"
+    },
+    {
+      "id": "weilaibei",
+      "title": "公司首届「未来杯」青年技能大赛",
+      "date": "2024-08",
+      "category": "竞赛获奖",
+      "award": "一等奖",
+      "org": "中国电信集团工会浙江省公众信息产业有限公司委员会",
+      "summary": "作为「信创先锋队」成员参赛，获一等奖。",
+      "content": "",
+      "tags": [
+        "信创",
+        "技能大赛"
+      ],
+      "cover": "/uploads/seed/weilaibei/cert.jpg",
+      "images": [
+        {
+          "url": "/uploads/seed/weilaibei/cert.jpg",
+          "caption": "荣誉证书"
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "featured": false,
+      "visible": true,
+      "createdAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z"
+    },
+    {
+      "id": "xinchuang-dcic",
+      "title": "2024 数字中国创新大赛 · 信创赛道",
+      "date": "2024-05-25",
+      "category": "竞赛获奖",
+      "award": "一等奖",
+      "org": "数字中国建设峰会组委会",
+      "summary": "参赛作品「数字信创产业服务平台」：用数据要素串起信创产业供需两侧，国产大模型驱动的 AI 数字人覆盖 7 个业务场景。",
+      "content": "数字信创产业服务平台由浙江省公众信息产业有限公司、中电信数政科技有限公司和中共杭州市委办公厅信息化管理中心联合打造，我是团队成员之一。\n\n平台按「1+6+3+1」架构搭建：1 个信创底座、6 大核心场景、3 端、1 屏，把信创产业的供给侧、需求侧和平台侧数据汇到一起。\n- 基于国产星辰政务大模型 + 昇腾 910B 开发信创 AI 数字人，覆盖运维知识、信创政策、解决方案、供需匹配等 7 个场景，累计提供近 10 万次问答\n- 数字人「杭小信」下沉到桌面端，集成一键报修、系统优化、病毒查杀和资产码管理\n- 国产化软硬件全栈支持：鲲鹏 + 麒麟、达梦与瀚高数据库、东方通中间件，国产化率 100%\n- 截至 2024 年 5 月，平台入驻企业 199 家、用户 39071 人、组织 790 个\n\n同一平台后来还入围工信部 2024 年信创典型应用案例，并拿下鲲鹏创新大赛 2025 浙江区域赛企业赛道铜奖。",
+      "tags": [
+        "信创",
+        "大模型",
+        "AI 数字人",
+        "数据要素"
+      ],
+      "cover": "/uploads/seed/xinchuang-dcic/stage.jpg",
+      "images": [
+        {
+          "url": "/uploads/seed/xinchuang-dcic/stage.jpg",
+          "caption": "信创赛道一等奖颁奖现场"
+        },
+        {
+          "url": "/uploads/seed/xinchuang-dcic/cert.jpg",
+          "caption": "总决赛一等奖奖状"
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "featured": true,
+      "visible": true,
+      "createdAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z"
+    }
+  ]
+}
